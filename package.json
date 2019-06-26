@@ -4,9 +4,9 @@
     "description": "Javascript Development Environment",
     "main": "index.js",
     "scripts": {
-        "prestart": "node buildScripts/startMessage.js",
+        "prestart": "babel-node buildScripts/startMessage.js",
         "start": "npm-run-all --parallel open:src",
-        "open:src": " node buildScripts/srcServer.js",
+        "open:src": " babel-node buildScripts/srcServer.js",
         "localtunnel": "lt --port 3000",
         "share": "npm-run-all --parallel open:src localtunnel"
     },
@@ -23,6 +23,7 @@
     "devDependencies": {
         "@babel/cli": "^7.4.4",
         "@babel/core": "^7.4.5",
+        "@babel/node": "^7.4.5",
         "@babel/preset-env": "^7.4.5",
         "babel-loader": "^8.0.6",
         "babel-register": "^6.26.0",
