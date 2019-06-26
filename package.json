@@ -17,10 +17,10 @@
     },
     "homepage": "https://github.com/webkidt/js-dev-env#readme",
     "devDependencies": {
-        "babel-cli": "^6.26.0",
-        "babel-core": "^6.26.3",
+        "@babel/cli": "^7.4.4",
+        "@babel/core": "^7.4.5",
+        "@babel/preset-env": "^7.4.5",
         "babel-loader": "^8.0.6",
-        "babel-preset-latest": "^6.24.1",
         "babel-register": "^6.26.0",
         "chai": "^4.2.0",
         "chalk": "^2.4.2",
