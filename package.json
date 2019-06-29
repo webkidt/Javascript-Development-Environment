@@ -5,19 +5,21 @@
     "main": "index.js",
     "scripts": {
         "prestart": "babel-node buildScripts/startMessage.js",
-        "start": "npm-run-all --parallel open:src lint:watch",
+        "start": "npm-run-all --parallel open:src lint:watch test:watch",
         "open:src": " babel-node buildScripts/srcServer.js",
         "lint": "esw webpack.config.* src buildScripts --color",
         "lint:watch": "npm run lint -- --watch",
         "localtunnel": "lt --port 3000",
-        "share": "npm-run-all --parallel open:src localtunnel"
+        "share": "npm-run-all --parallel open:src localtunnel",
+        "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+        "test:watch": "npm run test -- --watch"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/webkidt/js-dev-env.git"
     },
     "author": "David Pam",
-    "license": "ISC",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/webkidt/js-dev-env/issues"
     },
@@ -27,8 +29,8 @@
         "@babel/core": "^7.4.5",
         "@babel/node": "^7.4.5",
         "@babel/preset-env": "^7.4.5",
+        "@babel/register": "^7.4.4",
         "babel-loader": "^8.0.6",
-        "babel-register": "^6.26.0",
         "chai": "^4.2.0",
         "chalk": "^2.4.2",
         "cheerio": "^1.0.0-rc.3",
